@@ -1,0 +1,11 @@
+# Use an image with Java 17 (or your version)
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the built JAR file from the target folder
+COPY target/java-ci-app-1.0-SNAPSHOT.jar app.jar
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
